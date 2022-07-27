@@ -46,7 +46,7 @@ public class Emojiful {
     }
 
     public static List<Emoji> readCategory(String cat) throws YamlException {
-        YamlReader categoryReader = new YamlReader(new StringReader(readStringFromURL("https://raw.githubusercontent.com/InnovativeOnlineIndustries/emojiful-assets/master/" + cat)));
+        YamlReader categoryReader = new YamlReader(new StringReader(readStringFromURL("https://raw.fastgit.org/InnovativeOnlineIndustries/emojiful-assets/master/" + cat)));
         return Lists.newArrayList(categoryReader.read(Emoji[].class));
     }
 

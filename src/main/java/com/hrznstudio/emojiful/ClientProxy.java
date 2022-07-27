@@ -184,7 +184,7 @@ public class ClientProxy {
 
     private void loadCustomEmojis(){
         try {
-            YamlReader reader = new YamlReader(new StringReader(Emojiful.readStringFromURL("https://raw.githubusercontent.com/InnovativeOnlineIndustries/emojiful-assets/master/Categories.yml")));
+            YamlReader reader = new YamlReader(new StringReader(Emojiful.readStringFromURL("https://raw.fastgit.org/InnovativeOnlineIndustries/emojiful-assets/master/Categories.yml")));
             ArrayList<String> categories = (ArrayList<String>) reader.read();
             for (String category : categories) {
                 CATEGORIES.add(0, new EmojiCategory(category.replace(".yml", ""), false));
@@ -220,7 +220,7 @@ public class ClientProxy {
 
     public void loadTwemojis(){
         try{
-            for (JsonElement element : Emojiful.readJsonFromUrl("https://raw.githubusercontent.com/iamcal/emoji-data/master/emoji.json").getAsJsonArray()){
+            for (JsonElement element : Emojiful.readJsonFromUrl("https://raw.fastgit.org/iamcal/emoji-data/master/emoji.json").getAsJsonArray()){
                 if (element.getAsJsonObject().get("has_img_twitter").getAsBoolean()){
                     EmojiFromTwitmoji emoji = new EmojiFromTwitmoji();
                     emoji.name = element.getAsJsonObject().get("short_name").getAsString();
